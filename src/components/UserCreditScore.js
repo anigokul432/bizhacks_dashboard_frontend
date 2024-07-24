@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import GaugeComponent from 'react-gauge-component';
 import './UserCreditScore.css';
 
-const UserCreditScore = () => {
-  const [creditScore, setCreditScore] = useState(700);
+const UserCreditScore = ({ data }) => {
+  const credit_score = data.credit_score;
+  const name = "John Doe";
+  const email = "john.doe@example.com";
+  const phone = "+1 (938) 654-3445";
 
   return (
     <div className="user-credit-score-container">
@@ -12,7 +15,7 @@ const UserCreditScore = () => {
         <div className="gauge-container">
           <GaugeComponent
             type="radial"
-            value={creditScore}
+            value={credit_score}
             minValue={300}
             maxValue={850}
             arc={{
@@ -51,9 +54,9 @@ const UserCreditScore = () => {
           />
         </div>
         <div className="user-information">
-          <div className="user-name">John Doe</div>
-          <div className="user-email">john.doe@example.com</div>
-          <div className="user-phone">Phone: (123) 456-7890</div>
+          <div className="user-name">{name}</div>
+          <div className="user-email">{email}</div>
+          <div className="user-phone">Phone: {phone}</div>
           <div className="user-credit-card">Credit Card: Visa ending in 1234</div>
         </div>
       </div>

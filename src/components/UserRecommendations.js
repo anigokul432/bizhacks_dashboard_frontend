@@ -2,7 +2,15 @@ import React from 'react';
 import './UserRecommendations.css';
 import { FaStar, FaCarSide } from "react-icons/fa";
 
-const UserRecommendations = () => {
+const UserRecommendations = ({ data }) => {
+  const loanOffers = data.analysis['Loan Offers'];
+  const fallbackOffer = {
+    description: "Basic Personal Loan",
+    interest_rate: "10%"
+  };
+  const randomOffer = loanOffers.length > 0 ? loanOffers[Math.floor(Math.random() * loanOffers.length)] : fallbackOffer;
+  const { description, interest_rate } = randomOffer;
+
   return (
     <div className="recommendation-card">
       <div className="recommendation-header">
@@ -11,10 +19,11 @@ const UserRecommendations = () => {
       </div>
       <div className="recommendation-content">
         <div className="text-content">
-          <h2>$487 Interest Savings / 12 months*</h2>
-          <p>Save on your existing car loan with an estimated interest savings of $487 over 12 months. By refinancing, you can lower your monthly payments and reduce the overall cost of your loan. Take advantage of this opportunity to improve your financial health and keep more money in your pocket.</p>
+          <h2>{description}</h2>
+          <p>You are eligible to receive a {description} at an interest rate of {interest_rate}!</p>
         </div>
         <div className="recommendation-footer">
+          <FaCarSide className="car-icon" />
           <button className="learn-more-button">Learn More</button>
         </div>
       </div>
