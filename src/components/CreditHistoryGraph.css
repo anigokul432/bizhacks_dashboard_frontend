@@ -1,7 +1,40 @@
-.credit-history-graph {
-    background-color: #ffe0b2;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-  }
-  
+.chart-container {
+  margin: 50px 0; /* Top and bottom margins of 30px */
+}
+
+
+.chart-container {
+  margin: 50px 0; /* Top and bottom margins */
+  width: 100%; /* Full width */
+}
+
+.chart-title {
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px; /* Space between title and chart */
+  text-align: center; /* Center the title */
+}
+
+.chart-wrapper {
+  display: flex;
+  align-items: flex-start; /* Align color bar and chart at the top */
+  width: 100%; /* Full width */
+}
+
+.color-bar {
+  width: 30px; /* Width of the color bar */
+  height: 240px; /* Height of the color bar to match chart height */
+  background: linear-gradient(to top, red, orange, yellow, green); /* Gradient from red to green */
+  margin-right: 10px; /* Space between color bar and chart */
+  margin-top: 90px;
+}
+
+.color-bar-gradient {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, red, orange, yellow, green); /* Gradient from red to green */
+}
+
+.chart {
+  flex-grow: 1; /* Take the remaining space */
+}
