@@ -50,7 +50,7 @@ const UserCreditScore = () => {
             }}
           />
         </div>
-        <div className="user-info">
+        <div className="user-information">
           <div className="user-name">John Doe</div>
           <div className="user-email">john.doe@example.com</div>
           <div className="user-phone">Phone: (123) 456-7890</div>

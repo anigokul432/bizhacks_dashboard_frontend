@@ -19,7 +19,7 @@
   max-width: 250px; /* Adjusted the size of the gauge here */
 }
 
-.user-info {
+.user-information {
   flex: 2;
   display: flex;
   flex-direction: column;
