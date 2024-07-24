@@ -1,0 +1,43 @@
+.user-credit-score-container {
+  padding: 20px;
+  background: #fff;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+.gauge-container {
+  flex: 1;
+  max-width: 250px; /* Adjusted the size of the gauge here */
+}
+
+.user-info {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  text-align: left;
+}
+
+.user-name {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.user-email {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.user-phone,
+.user-credit-card {
+  margin-bottom: 10px;
+}

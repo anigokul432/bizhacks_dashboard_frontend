@@ -1,6 +1,80 @@
-.user-recommendations {
-    background-color: #c8e6c9;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
+.recommendation-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+
+  height: 100%;
+}
+
+.recommendation-header {
+  display: flex;
+  align-items: center;
+  background-color: #c0d6eb;
+  padding: 8px;
+  border-radius: 4px;
+  color: #357abc;
+  font-weight: bold;
+  width: 210px;
+}
+
+.star-icon {
+  margin-right: 8px;
+}
+
+.recommendation-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}
+
+.text-content {
+  margin-bottom: auto;
+}
+
+.recommendation-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.car-icon {
+  font-size: 6rem;
+  color: #357abc;
+  margin-bottom: 8px;
+}
+
+.learn-more-button {
+  background-color: #357abc;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.learn-more-button:hover {
+  background-color: #2a5c8c;
+}
+
+.indicator-dots {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.dot, .active-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  margin-right: 4px;
+}
+
+.active-dot {
+  background-color: #357abc;
+}
