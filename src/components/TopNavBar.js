@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from '../logo.svg';
 import './TopNavBar.css';
-import { GoBell } from "react-icons/go";
-import { RxGear } from "react-icons/rx";
-import { RxExit } from "react-icons/rx";
+import { GoBell } from 'react-icons/go';
+import { RxGear, RxExit } from 'react-icons/rx';
+import logo from '../logo.svg';
 
 const TopNavBar = () => {
   return (
     <div className="top-nav-bar">
       <img src={logo} alt="logo" className="logo" />
-      
-      <div className="nav-icons">
-        <GoBell className="icon" />
-        <RxGear className="icon" />
-        <RxExit className="icon" />
-      </div>
-      
-      <div className="user-info">
-        <span className="user-icon">A</span>
-        <span className="username">Anonymous</span>
+      <div className="nav-right">
+        <div className="icon-group">
+          <GoBell className="icon" />
+          <div className="divider"></div>
+          <RxGear className="icon" />
+          <div className="divider"></div>
+          <RxExit className="icon" />
+        </div>
+        <div className="user-info">
+          <span className="user-icon">A</span>
+          <span className="username">Anonymous</span>
+        </div>
       </div>
     </div>
   );

@@ -2,9 +2,11 @@
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     text-align: center;
-    padding: 10px 0;
-    border-top: 1px solid #dee2e6;
+    padding: 15px 0;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Added drop shadow */
+    font-size: 10px;
   }
   
+
