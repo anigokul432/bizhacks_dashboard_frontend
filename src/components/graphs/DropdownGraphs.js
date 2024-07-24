@@ -8,38 +8,85 @@ const DropdownGraphs = () => {
   const [ageGroup12Months, setAgeGroup12Months] = useState(10);
   const [spendingType, setSpendingType] = useState('Groceries');
 
+  // Options for the dropdown
+  const spendingOptions = [
+    'Groceries', 'Clothing', 'Housing', 'Education', 'Health',
+    'Travel', 'Entertainment', 'Gambling', 'Utilities', 'Tax', 'Fines'
+  ];
+
   // Data for the chart
   const data = [
-    ['Category', 'Value'],
+    ['Category', 'Amount Spent'],
     ['Past 12 Months', past12Months],
     ['Past 12 Months for Age Group', ageGroup12Months],
   ];
 
   // Chart options
   const options = {
-    chartArea: { width: '50%' },
+    chartArea: { width: '80%' }, // Adjust this to make more space for the Y-axis label
     hAxis: {
-      title: 'Value',
+      title: 'Category',
       minValue: 0,
+      titleTextStyle: {
+        fontSize: 14,
+        fontName: 'Roboto', // Font family for axis title
+        italic: false,
+      },
+      textStyle: {
+        fontSize: 12,
+        fontName: 'Roboto', // Font family for axis text
+        italic: false,
+      },
     },
     vAxis: {
-      title: 'Category',
+      title: 'Amount Spent',
+      titleTextStyle: {
+        fontSize: 14,
+        fontName: 'Roboto', // Font family for axis title
+        italic: false,
+      },
+      textStyle: {
+        fontSize: 12,
+        fontName: 'Roboto', // Font family for axis text
+        italic: false,
+      },
     },
     colors: ['#1c91c0', '#e7711c'],
-    legend: {position:'none'}
+    legend: { position: 'none' },
+  };
+
+  // Handle dropdown change
+  const handleDropdownChange = (event) => {
+    setSpendingType(event.target.value);
   };
 
   return (
-    <div className="chart-container">
-      <h2 className="chart-title">{spendingType} Spending Comparison Over 12 Months</h2>
-      <Chart
-        width={'100%'}
-        height={'400px'}
-        chartType="Bar"
-        data={data}
-        options={options}
-      />
-      <div className="controls">
+    <div className="graph-wrapper">
+      <h2 className="title-section">{spendingType} Spending Comparison Over 12 Months</h2>
+      <div className="dropdown-section">
+        <label htmlFor="spending-dropdown">Select Spending Type:</label>
+        <select
+          id="spending-dropdown"
+          value={spendingType}
+          onChange={handleDropdownChange}
+        >
+          {spendingOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+      </div>
+      <div className="chart-wrapper">
+        <Chart
+          width={'100%'}
+          height={'400px'}
+          chartType="ColumnChart"
+          data={data}
+          options={options}
+        />
+      </div>
+      <div className="controls-section">
         <div>
           <label>
             Bar 1 Value:

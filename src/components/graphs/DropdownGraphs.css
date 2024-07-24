@@ -1,0 +1,54 @@
+/* DropdownGraphs.css */
+
+.graph-wrapper {
+    margin: 10px 0;
+    padding: 20px;
+    /* border: 1px solid #ddd;
+    border-radius: 8px; */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.title-section {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px; /* Space between title and dropdown */
+    text-align: center; /* Center-align the title */
+}
+
+.dropdown-section {
+    margin-bottom: 20px; /* Space between dropdown and chart */
+    text-align: center; /* Center-align the dropdown */
+}
+
+.dropdown-section label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.dropdown-section select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.chart-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Space between chart and controls */
+}
+
+.controls-section {
+    margin-top: 20px;
+    text-align: center; /* Center-align the controls */
+}
+
+.controls-section label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.controls-section input {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 16px;
+}
