@@ -9,7 +9,7 @@ const CreditHistoryChart = () => {
     ['Jan 2024', 320],
     ['Feb 2024', 715],
     ['Mar 2024', 530],
-    ['Apr 2024', 625],
+    ['Apr 2024', 820],
     ['May 2024', 340],
     ['Jun 2024', 735],
     ['Jul 2024', 750],
@@ -27,7 +27,7 @@ const CreditHistoryChart = () => {
       { offset: 0, color: [255, 0, 0] },     // Red
       { offset: 0.33, color: [255, 165, 0] }, // Orange
       { offset: 0.67, color: [255, 255, 0] }, // Yellow
-      { offset: 1, color: [0, 255, 0] }       // Green
+      { offset: 1, color: [0, 128, 0] }       // Green
     ];
   
     // Determine color based on percentage
@@ -65,7 +65,6 @@ const CreditHistoryChart = () => {
 
   // Chart options with non-italicized axis text and Roboto font
   const options = {
-    title: 'Credit History Over Time',
     curveType: 'function',
     legend: { position: 'none' }, // Remove the legend
     hAxis: {
