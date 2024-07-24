@@ -3,6 +3,7 @@
     grid-template-columns: repeat(3, 2fr);
     gap: 16px;
     padding: 20px;
+    margin-bottom:40px;
   }
   
   .score-card {
@@ -23,6 +24,14 @@
   
   .score-header h3 {
     margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .info-icon {
+    margin-left: 8px;
+    cursor: pointer;
+    font-size: 14px;
   }
   
   .grade {
@@ -32,16 +41,16 @@
   }
   
   .grade.green {
-    background-color: rgb(81, 205, 131);
+    background-color: green;
   }
   
   .grade.yellow {
-    background-color: rgb(253, 253, 90);
+    background-color: yellow;
     color: #000;
   }
   
   .grade.red {
-    background-color: rgb(249, 33, 33);
+    background-color: red;
   }
   
   .result {

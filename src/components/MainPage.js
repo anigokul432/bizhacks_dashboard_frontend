@@ -12,7 +12,9 @@ const MainPage = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('https://ai-first.eastus.cloudapp.azure.com/report?cust_id=C07VC05Z4R')
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id') || 'C07VC05Z4R';
+    fetch(`https://ai-first.eastus.cloudapp.azure.com/report?cust_id=${id}`)
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error('Error fetching data:', error));

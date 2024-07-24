@@ -25,10 +25,17 @@ const ScoreAnalysis = ({ data }) => {
         return (
           <div className="score-card" key={index} style={{ borderLeft: `4px solid ${gradeColor}` }}>
             <div className="score-header">
-              <h3>{key}</h3>
+              <h3>
+                {key}
+                {key !== 'Score Rating' && (
+                  <i className="info-icon" title={item.description}>
+                    ⓘ
+                  </i>
+                )}
+              </h3>
               <span className={`grade ${gradeColor}`}>Grade {item.grade}</span>
             </div>
-            <p>{key === 'Score Rating' ? item.rating : item.description}</p>
+            {key === 'Score Rating' ? <p>{item.rating}</p> : null}
             <p className="result">{item.result}</p>
           </div>
         );

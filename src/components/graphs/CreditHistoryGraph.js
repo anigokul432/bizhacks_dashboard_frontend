@@ -2,18 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Chart } from 'react-google-charts';
 import './CreditHistoryGraph.css'; // Import the CSS file
 
-const CreditHistoryChart = () => {
+const CreditHistoryChart = ({data}) => {
   // Example credit history data with formatted dates and annotations
-  const initialData = [
-    ['Date', 'Credit Score'],
-    ['Jan 2024', 320],
-    ['Feb 2024', 715],
-    ['Mar 2024', 530],
-    ['Apr 2024', 820],
-    ['May 2024', 340],
-    ['Jun 2024', 735],
-    ['Jul 2024', 750],
-  ];
+  const initialData = [['Date', 'Credit Score'], ...data.trends.data];
 
   const [rawData, setRawData] = useState(initialData);
   const [transformedData, setTransformedData] = useState([]);
