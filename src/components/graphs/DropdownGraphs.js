@@ -66,8 +66,8 @@ const DropdownGraphs = () => {
       },
     },
     viewWindow: {
-      min: Math.max(0, Math.min(past12Months, ageGroup12Months) - 1000), // Set minimum value for y-axis
-      max: Math.min(100000000, Math.max(past12Months, ageGroup12Months) + 1000), // Set maximum value for y-axis
+      min: 0, // Set minimum value for y-axis
+      max: Math.ceil(Math.max(past12Months, ageGroup12Months) * 1.2), // Set maximum value for y-axis
     },
     legend: { position: 'none' },
   };
