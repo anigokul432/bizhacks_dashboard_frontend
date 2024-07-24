@@ -21,15 +21,15 @@ const CreditHistoryChart = () => {
     const max = 850;
     const range = max - min;
     const percentage = (value - min) / range;
-    
+
     // Define gradient colors
     const colors = [
-      { offset: 0, color: [255, 0, 0] },     // Red
+      { offset: 0, color: [255, 0, 0] }, // Red
       { offset: 0.33, color: [255, 165, 0] }, // Orange
       { offset: 0.67, color: [255, 255, 0] }, // Yellow
-      { offset: 1, color: [0, 128, 0] }       // Green
+      { offset: 1, color: [0, 128, 0] } // Green
     ];
-  
+
     // Determine color based on percentage
     let startColor, endColor;
     for (let i = 0; i < colors.length - 1; i++) {
@@ -39,19 +39,18 @@ const CreditHistoryChart = () => {
         break;
       }
     }
-  
+
     // Calculate the interpolation factor
     const segmentLength = endColor.offset - startColor.offset;
     const segmentProgress = (percentage - startColor.offset) / segmentLength;
-  
+
     // Interpolate between the start and end colors
     const red = Math.round(startColor.color[0] + segmentProgress * (endColor.color[0] - startColor.color[0]));
     const green = Math.round(startColor.color[1] + segmentProgress * (endColor.color[1] - startColor.color[1]));
     const blue = Math.round(startColor.color[2] + segmentProgress * (endColor.color[2] - startColor.color[2]));
-  
+
     return `rgb(${red}, ${green}, ${blue})`;
   };
-  
 
   // Transform rawData to include style and annotation without adding columns
   const transformedData = rawData.map((row, index) => {

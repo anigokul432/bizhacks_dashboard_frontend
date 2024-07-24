@@ -1,0 +1,83 @@
+/* GraphsContainer.css */
+
+/* Container to hold both graphs in two columns */
+.graphs-container {
+    display: flex;
+    flex-direction: row; /* Set to row for two columns */
+    justify-content: center; /* Center the container within its parent */
+    width: 100%;
+    box-sizing: border-box;
+    gap: 20px; /* Add some space between the columns */
+    padding: 20px; /* Optional: Add padding if needed */
+}
+
+/* Shared styles for individual graph containers */
+.graph-wrapper, .chart-container {
+    flex: 1;
+    max-width: 45%; /* Ensure each column takes up roughly half the space */
+    margin: 10px;
+    box-sizing: border-box;
+}
+
+/* Titles */
+.title-section, .chart-title {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 10px; /* Space between title and chart */
+    text-align: center; /* Center-align the title */
+}
+
+/* Dropdown section */
+.dropdown-section {
+    margin-bottom: 20px; /* Space between dropdown and chart */
+    text-align: center; /* Center-align the dropdown */
+}
+
+.dropdown-section label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.dropdown-section select {
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* Chart wrapper */
+.chart-wrapper, .chart {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Space between chart and controls */
+}
+
+/* Controls section */
+.controls-section {
+    margin-top: 20px;
+    text-align: center; /* Center-align the controls */
+}
+
+.controls-section label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.controls-section input {
+    margin-left: 10px;
+    padding: 5px;
+    font-size: 16px;
+}
+
+/* Color bar for Credit History Graph */
+.color-bar {
+    width: 30px; /* Width of the color bar */
+    height: 240px; /* Height of the color bar to match chart height */
+    background: linear-gradient(to top, red, orange, yellow, green); /* Gradient from red to green */
+    margin-right: 10px; /* Space between color bar and chart */
+    margin-top: 90px;
+}
+
+.color-bar-gradient {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to top, red, orange, yellow, green); /* Gradient from red to green */
+}

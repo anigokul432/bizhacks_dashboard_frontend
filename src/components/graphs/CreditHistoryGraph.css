@@ -1,9 +1,4 @@
 .chart-container {
-  margin: 50px 0; /* Top and bottom margins of 30px */
-}
-
-
-.chart-container {
   margin: 50px 0; /* Top and bottom margins */
   width: 100%; /* Full width */
 }
@@ -19,6 +14,8 @@
   display: flex;
   justify-content: center;
   width: 100%; /* Full width */
+  margin: 0 0;
+  box-sizing: border-box;
 }
 
 .color-bar {
@@ -36,5 +33,6 @@
 }
 
 .chart {
-  flex-grow: 1; /* Take the remaining space */
+  /* flex-grow: 1; Take the remaining space */
+  width: 428px;
 }

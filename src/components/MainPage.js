@@ -4,6 +4,7 @@ import UserCreditScore from './UserCreditScore';
 import CreditHistoryGraph from './graphs/CreditHistoryGraph';
 import UserRecommendations from './UserRecommendations';
 import DropdownGraphs from './graphs/DropdownGraphs';
+import './graphs/Combined.css'
 
 const MainPage = () => {
   const [activeTab, setActiveTab] = useState('Score Analysis');
@@ -28,7 +29,7 @@ const MainPage = () => {
       </div>
       <div className="tab-content">
         {activeTab === 'Graph' && (
-          <div className="graph-content">
+          <div className="graphs-container">
             <CreditHistoryGraph />
             <DropdownGraphs />
           </div>

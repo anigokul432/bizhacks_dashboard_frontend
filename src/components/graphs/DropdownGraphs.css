@@ -1,32 +1,26 @@
-/* DropdownGraphs.css */
-
-.graph-wrapper {
-    margin: 10px 0;
-    /* padding: 20px; */
-    /* border: 1px solid #ddd;
-    border-radius: 8px; */
-    width: 100%;
-    box-sizing: border-box;
+.graph-container {
+    margin: 50px 0; /* Top and bottom margins */
+    width: 100%; /* Full width */
 }
 
-.title-section {
+.graph-title {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
-    margin-bottom: 10px; /* Space between title and dropdown */
-    text-align: center; /* Center-align the title */
+    margin-bottom: 20px; /* Space between title and chart */
+    text-align: center; /* Center the title */
 }
 
-.dropdown-section {
+.dropdown-wrapper {
     margin-bottom: 20px; /* Space between dropdown and chart */
     text-align: center; /* Center-align the dropdown */
 }
 
-.dropdown-section label {
+.dropdown-wrapper label {
     font-size: 16px;
     margin-right: 10px;
 }
 
-.dropdown-section select {
+.dropdown-wrapper select {
     padding: 5px;
     font-size: 16px;
 }
@@ -34,20 +28,22 @@
 .chart-wrapper {
     display: flex;
     justify-content: center;
+    width: 100%; /* Full width */
     margin-bottom: 20px; /* Space between chart and controls */
+    box-sizing: border-box;
 }
 
-.controls-section {
+.controls-wrapper {
     margin-top: 20px;
     text-align: center; /* Center-align the controls */
 }
 
-.controls-section label {
+.controls-wrapper label {
     display: block;
     margin-bottom: 10px;
 }
 
-.controls-section input {
+.controls-wrapper input {
     margin-left: 10px;
     padding: 5px;
     font-size: 16px;
