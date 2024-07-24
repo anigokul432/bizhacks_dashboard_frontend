@@ -25,7 +25,7 @@ const ScoreAnalysis = ({ data }) => {
         return (
           <div className="score-card" key={index} style={{ borderLeft: `4px solid ${gradeColor}` }}>
             <div className="score-header">
-              <h3>
+              <h3 className="font-bold">
                 {key}
                 {key !== 'Score Rating' && (
                   <i className="info-icon" title={item.description}>

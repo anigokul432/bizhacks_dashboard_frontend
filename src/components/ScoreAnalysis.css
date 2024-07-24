@@ -41,16 +41,16 @@
   }
   
   .grade.green {
-    background-color: green;
+    background-color: rgb(75, 190, 75);
   }
   
   .grade.yellow {
-    background-color: yellow;
+    background-color: rgb(255, 247, 91);
     color: #000;
   }
   
   .grade.red {
-    background-color: red;
+    background-color: rgb(220, 57, 57);
   }
   
   .result {

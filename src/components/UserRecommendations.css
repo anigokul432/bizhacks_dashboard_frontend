@@ -7,7 +7,7 @@
   height: 100%;
 }
 
-.recommendation-header {
+.recommendation-headerr {
   display: flex;
   align-items: center;
   background-color: #c0d6eb;
@@ -15,7 +15,7 @@
   border-radius: 4px;
   color: #357abc;
   font-weight: bold;
-  width: 210px;
+  width: 220px;
 }
 
 .star-icon {

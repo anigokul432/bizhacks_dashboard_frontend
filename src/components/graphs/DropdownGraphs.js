@@ -56,7 +56,7 @@ const DropdownGraphs = ({ data }) => {
 
   return (
     <div className="graph-wrapper">
-      <h2 className="title-section">{formatOption(spendingType)} Spending Comparison Over 12 Months</h2>
+      <h2 className="title-section font-bold">{formatOption(spendingType)} Spending Comparison Over 12 Months</h2>
       <div className="dropdown-section">
         <label htmlFor="spending-dropdown">Select Spending Type:</label>
         <select id="spending-dropdown" value={formatOption(spendingType)} onChange={handleDropdownChange}>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Chart } from 'react-google-charts';
 import './CreditHistoryGraph.css'; // Import the CSS file
 
-const CreditHistoryChart = ({data}) => {
+const CreditHistoryChart = ({ data }) => {
   // Example credit history data with formatted dates and annotations
   const initialData = [['Date', 'Credit Score'], ...data.trends.data];
 
@@ -120,7 +120,7 @@ const CreditHistoryChart = ({data}) => {
 
   return (
     <div className="chart-container">
-      <h2 className="chart-title">Credit History Chart</h2>
+      <h2 className="chart-title font-bold">Credit History Chart</h2>
       <div className="chart-wrapper">
         <div className="chart">
           <Chart

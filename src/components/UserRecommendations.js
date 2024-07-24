@@ -1,5 +1,4 @@
 import React from 'react';
-import './UserRecommendations.css';
 import { FaStar, FaCarSide } from "react-icons/fa";
 
 const UserRecommendations = ({ data }) => {
@@ -12,25 +11,30 @@ const UserRecommendations = ({ data }) => {
   const { description, interest_rate } = randomOffer;
 
   return (
-    <div className="recommendation-card">
-      <div className="recommendation-header">
-        <FaStar className="star-icon" />
-        <span>Recommended for You</span>
+    <div className="bg-white rounded-lg p-6">
+      <div className="flex items-center mb-4 bg-blue-100 p-2 rounded">
+        <FaStar className="text-blue-500 mr-2" />
+        <span className="font-bold text-blue-500">Recommended for You</span>
       </div>
-      <div className="recommendation-content">
-        <div className="text-content">
-          <h2>{description}</h2>
-          <p>You are eligible to receive a {description} at an interest rate of {interest_rate}!</p>
+      <div className="flex justify-between items-center">
+        <div className="flex-1">
+          <h2 className="text-2xl font-semibold mb-2">{description}</h2>
+          <p className="text-gray-700">
+            You are eligible to receive a {description} at an interest rate of 
+            <span className="font-bold"> {interest_rate}</span>!
+          </p>
         </div>
-        <div className="recommendation-footer">
-          <FaCarSide className="car-icon" />
-          <button className="learn-more-button">Learn More</button>
+        <div className="flex flex-col items-center">
+          <FaCarSide className="text-blue-500 mb-2" style={{ fontSize: '6rem' }} />
+          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">
+            Learn More
+          </button>
         </div>
       </div>
-      <div className="indicator-dots">
-        <div className="active-dot"></div>
-        <div className="dot"></div>
-        <div className="dot"></div>
+      <div className="flex mt-4">
+        <div className="w-2 h-2 bg-blue-500 rounded-full mr-2"></div>
+        <div className="w-2 h-2 bg-gray-300 rounded-full mr-2"></div>
+        <div className="w-2 h-2 bg-gray-300 rounded-full"></div>
       </div>
     </div>
   );
