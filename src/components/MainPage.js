@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './MainPage.css';
 import UserCreditScore from './UserCreditScore';
 import CreditHistoryGraph from './graphs/CreditHistoryGraph';
@@ -6,19 +6,38 @@ import UserRecommendations from './UserRecommendations';
 import DropdownGraphs from './graphs/DropdownGraphs';
 
 const MainPage = () => {
+  const [activeTab, setActiveTab] = useState('Score Analysis');
+
   return (
     <div className="main-page">
-      <div className="centered-container">
-        <UserCreditScore />
-        <div className="graphs-container">
-          <div className="graph">
+      <div className="top-cards">
+        <div className="user-credit-score">
+          <UserCreditScore />
+        </div>
+        <div className="user-recommendations">
+          <UserRecommendations />
+        </div>
+      </div>
+      <div className="tabs">
+        <button className={activeTab === 'Score Analysis' ? 'active' : ''} onClick={() => setActiveTab('Score Analysis')}>
+          Score Analysis
+        </button>
+        <button className={activeTab === 'Graph' ? 'active' : ''} onClick={() => setActiveTab('Graph')}>
+          Graph
+        </button>
+      </div>
+      <div className="tab-content">
+        {activeTab === 'Graph' && (
+          <div className="graph-content">
             <CreditHistoryGraph />
-          </div>
-          <div className="graph">
             <DropdownGraphs />
           </div>
-        </div>
-        <UserRecommendations />
+        )}
+        {activeTab === 'Score Analysis' && (
+          <div className="score-analysis-content">
+            {/* Content for Score Analysis */}
+          </div>
+        )}
       </div>
     </div>
   );

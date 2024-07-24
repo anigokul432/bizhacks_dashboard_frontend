@@ -17,7 +17,7 @@
 
 .chart-wrapper {
   display: flex;
-  align-items: flex-start; /* Align color bar and chart at the top */
+  justify-content: center;
   width: 100%; /* Full width */
 }
 
