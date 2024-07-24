@@ -1,0 +1,47 @@
+.top-nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .logo {
+    height: 40px; /* Adjust as needed */
+  }
+  
+  .nav-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Space between icons and user-info */
+  }
+  
+  .icon {
+    margin: 0 20px; /* Increase spacing between icons */
+    font-size: 20px; /* Adjust size as needed */
+    cursor: pointer;
+    color: gray; /* Set icon color to gray */
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-icon {
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+  }
+  
+  .username {
+    font-size: 16px;
+  }
+  
