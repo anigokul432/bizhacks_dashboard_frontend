@@ -19,11 +19,11 @@
 }
 
 .color-bar {
-  width: 30px; /* Width of the color bar */
+  width: 40px; /* Increase width of the color bar */
   height: 240px; /* Height of the color bar to match chart height */
   background: linear-gradient(to top, red, orange, yellow, green); /* Gradient from red to green */
   margin-right: 10px; /* Space between color bar and chart */
-  margin-top: 90px;
+  
 }
 
 .color-bar-gradient {
@@ -33,6 +33,5 @@
 }
 
 .chart {
-  /* flex-grow: 1; Take the remaining space */
-  width: 428px;
+  width: 680px; /* Increased width of the chart */
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Chart } from 'react-google-charts';
 import './DropdownGraphs.css'; // Import the CSS file
 
@@ -14,12 +14,26 @@ const DropdownGraphs = () => {
     'Travel', 'Entertainment', 'Gambling', 'Utilities', 'Tax', 'Fines'
   ];
 
-  // Data for the chart
-  const data = [
+  // Raw data for the chart
+  const rawData = [
     ['Category', 'Amount Spent'],
     ['Past 12 Months', past12Months],
-    ['Past 12 Months for Age Group', ageGroup12Months],
+    ['Past 12 Months for Same Age Group', ageGroup12Months],
   ];
+
+  // Transform rawData to include style information
+  const transformedData = useMemo(() => {
+    return rawData.map((row, index) => {
+      if (index === 0) {
+        // Add style role to header
+        return [...row, { role: 'style' }];
+      }
+      const [category, amount] = row;
+      // Set color based on category
+      const color = category === 'Past 12 Months' ? '#357abc' : '#9e9e9e'; // Blue for Past 12 Months, Gray for Age Group
+      return [...row, color];
+    });
+  }, [past12Months, ageGroup12Months]);
 
   // Chart options
   const options = {
@@ -51,7 +65,10 @@ const DropdownGraphs = () => {
         italic: false,
       },
     },
-    colors: ['#1c91c0', '#e7711c'],
+    viewWindow: {
+      min: Math.max(0, Math.min(past12Months, ageGroup12Months) - 1000), // Set minimum value for y-axis
+      max: Math.min(100000000, Math.max(past12Months, ageGroup12Months) + 1000), // Set maximum value for y-axis
+    },
     legend: { position: 'none' },
   };
 
@@ -82,7 +99,7 @@ const DropdownGraphs = () => {
           width={'100%'}
           height={'400px'}
           chartType="ColumnChart"
-          data={data}
+          data={transformedData}
           options={options}
         />
       </div>

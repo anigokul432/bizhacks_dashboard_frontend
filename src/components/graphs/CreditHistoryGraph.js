@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Chart } from 'react-google-charts';
 import './CreditHistoryGraph.css'; // Import the CSS file
 
 const CreditHistoryChart = () => {
   // Example credit history data with formatted dates and annotations
-  const rawData = [
+  const initialData = [
     ['Date', 'Credit Score'],
     ['Jan 2024', 320],
     ['Feb 2024', 715],
@@ -14,6 +14,9 @@ const CreditHistoryChart = () => {
     ['Jun 2024', 735],
     ['Jul 2024', 750],
   ];
+
+  const [rawData, setRawData] = useState(initialData);
+  const [transformedData, setTransformedData] = useState([]);
 
   // Color gradient function
   const getColor = (value) => {
@@ -52,19 +55,26 @@ const CreditHistoryChart = () => {
     return `rgb(${red}, ${green}, ${blue})`;
   };
 
-  // Transform rawData to include style and annotation without adding columns
-  const transformedData = rawData.map((row, index) => {
-    if (index === 0) {
-      return [...row, { role: 'style' }, { role: 'annotation' }]; // Add style and annotation roles to header
-    }
-    const [date, score] = row;
-    const color = getColor(score);
-    return [...row, color, score]; // Add color and annotation for each row
-  });
+  // Function to transform rawData to include style and annotation without adding columns
+  const transformData = () => {
+    const newTransformedData = rawData.map((row, index) => {
+      if (index === 0) {
+        return [...row, { role: 'style' }, { role: 'annotation' }]; // Add style and annotation roles to header
+      }
+      const [date, score] = row;
+      const color = getColor(score);
+      return [...row, color, score]; // Add color and annotation for each row
+    });
+    setTransformedData(newTransformedData);
+  };
+
+  useEffect(() => {
+    transformData();
+  }, [rawData]);
 
   // Chart options with non-italicized axis text and Roboto font
   const options = {
-    curveType: 'function',
+    curveType: 'none',
     legend: { position: 'none' }, // Remove the legend
     hAxis: {
       title: 'Date',
@@ -121,12 +131,9 @@ const CreditHistoryChart = () => {
     <div className="chart-container">
       <h2 className="chart-title">Credit History Chart</h2>
       <div className="chart-wrapper">
-        <div className="color-bar">
-          <div className="color-bar-gradient"></div>
-        </div>
         <div className="chart">
           <Chart
-            width={'calc(100% - 40px)'} // Adjust width for color bar + padding
+            width={'calc(100% + 70px)'} // Adjust width for color bar + padding
             height={'400px'}
             chartType="LineChart"
             data={transformedData}
